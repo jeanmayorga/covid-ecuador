@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "rootDir": "src",
+    "outDir": "build",
+    "target": "es2018",
     "lib": [
       "dom",
       "dom.iterable",
@@ -19,6 +21,9 @@
     "noEmit": true,
     "jsx": "react"
   },
+  "exclude": [
+    "node_modules"
+  ],
   "include": [
     "src"
   ]
