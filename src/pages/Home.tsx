@@ -1,5 +1,6 @@
-import { Row, Col, Tag, Progress } from 'antd';
+import { Row, Col, Tag } from 'antd';
 import React from 'react';
+import Busqueda from '../components/busqueda_p_c';
 import ProgresoCircle from '../components/progreso_circle';
 import ProgresoLine from '../components/progreso_barra';
 import Statico from '../components/static';
@@ -7,6 +8,29 @@ import Footer from '../components/footer';
 import Head from '../components/head';
 import "../less/home.less";
 
+
+const data = [
+  {
+    key: '1',
+    provincia: 'Manabi',
+    poblacion: 10292,
+    infectados: 932,
+    progreso: 12
+  },
+  {
+    key: '2',
+    provincia: 'Los Rios',
+    poblacion: 10292,
+    infectados: 932,
+    progreso: 47
+  },{
+    key: '3',
+    provincia: 'Azuay',
+    poblacion: 10292,
+    infectados: 932,
+    progreso: 60
+  }
+];
 
 export const Home = () => {
   return (
@@ -49,26 +73,61 @@ export const Home = () => {
       </div>
 
       <div>MAPA ECUADOR</div>
+      <svg height="100" width="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path fill="red" style={{ backgroundColor: "red" }} d="" />
+      </svg>
+
 
 <br/><br/><br/><br/><br/>
-    <div>
-      <Row justify="center">
-        <Col xs={20} md={15}>
-          <strong>Manabi:</strong>
-          <ProgresoLine porcentaje={40} />
-        </Col>
-        <Col xs={20} md={15}>
-          <strong>Azuay:</strong>
-          <ProgresoLine porcentaje={80} />
-        </Col>
-        <Col xs={20} md={15}>
-          <strong>Los Rios:</strong>
-          <ProgresoLine porcentaje={32} />
-        </Col>
-      </Row>
+    
+    <div className='estadisticas_provincias'>
+      <h2>Datos por Provincias</h2>
+        
+        <Row justify='center'>
+          <Col xs={5} md={4}>
+            <strong>Provincias:</strong>
+          </Col>
+          <Col xs={5} md={4}>
+            <strong>Poblacion:</strong>
+          </Col>
+            <Col xs={5} md={4}>
+              <strong>Infectados:</strong>
+          </Col>
+            <Col xs={5} md={4}>
+              <strong>Progreso</strong>
+          </Col>
+        </Row>
+
+        <div className='fila_estadistica'>
+          {data.map( valor => (
+            <Row justify='center'>
+              <Col xs={5} md={4}>
+                <span>{valor.provincia}</span>
+              </Col>
+              <Col xs={5} md={4}>
+                <span>{valor.poblacion}</span>
+              </Col>
+                <Col xs={5} md={4}>
+                <span>{valor.infectados}</span>
+              </Col>
+                <Col xs={5} md={4}>
+                <ProgresoLine porcentaje={valor.progreso} />
+              </Col>
+            </Row>
+          ))}
+        </div>
     </div>
 
-    <br/><br/>
+
+      <div className='busqueda'>
+        <Row justify='center'>
+          <Col xs={20} md={12}>
+            
+              <Busqueda />
+
+          </Col>
+        </Row>
+      </div>
 
       <Footer />
     </>
