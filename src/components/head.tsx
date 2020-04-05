@@ -1,8 +1,8 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
-interface Entrada{
-    titulo: string;
+interface Entrada {
+  titulo: string;
 }
 
 const Cabezera = ( props: Entrada ) => {
@@ -15,5 +15,4 @@ const Cabezera = ( props: Entrada ) => {
         </Helmet>
     );
 }
-
 export default Cabezera;
