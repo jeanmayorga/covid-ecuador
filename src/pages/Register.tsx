@@ -41,19 +41,21 @@ function Register({ firebase }: Props) {
 
   return (
     <Row className='Admin'>
-      <Col span={15} className='bg'>
+      <Col span={14} className='bg'>
         <div className='image'>
           <img src={bg} alt='Wallpaper' />
         </div>
       </Col>
+      <Col span={1}></Col>
       <Col span={8} className='LoginOut'>
         <div className='LoginBox'>
           <h1>
-            Signup with a new <br />
-            Account!
+            Thank you for <br />
+            Helping us!
           </h1>
           {step === 'signup' ? (
             <>
+              <h2>Create a new account!</h2>
               <p>Tell us your data.</p>
               <Form onFinish={sigupFormSubmit}>
                 <Form.Item name='email' rules={[{ required: true, message: 'Please input your email!' }]}>

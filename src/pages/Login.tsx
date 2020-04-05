@@ -43,11 +43,12 @@ function Login({ firebase }: Props) {
 
   return (
     <Row className='Admin'>
-      <Col span={15} className='bg'>
+      <Col span={14} className='bg'>
         <div className='image'>
           <img src={bg} alt='Wallpaper' />
         </div>
       </Col>
+      <Col span={1}></Col>
       <Col span={8} className='LoginOut'>
         <div className='LoginBox'>
           <h1>
