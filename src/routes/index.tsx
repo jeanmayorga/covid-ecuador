@@ -2,9 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
+import '../less/App.less';
 import { AdminHome } from '../pages/Admin/Home';
 import Datos from '../pages/datos-de';
 import { Home } from '../pages/Home';
+import { Login } from '../pages/Login';
 import { NotFound } from '../pages/NotFound';
 import { Province } from '../pages/Province';
 import { RootState } from '../store';
@@ -21,6 +23,7 @@ export function Routes() {
       <Route exact path='/provincia/:provinceName' component={Province} />
       <Route exact path='/provincia/:palabra' component={Datos} />
       {/*  logged user routes */}
+      <Route exact path='/admin/login' component={Login} />
       <LoggedRoute exact path='/admin/' component={AdminHome} />
       <Route component={NotFound} />
     </Switch>
