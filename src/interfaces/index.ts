@@ -1,6 +1,8 @@
+export type Loading = boolean;
+
 export interface User {
   userId: string;
-  provider: string;
+  email: string;
 }
 
 export interface Cases {

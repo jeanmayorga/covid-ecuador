@@ -2,9 +2,11 @@ import { combineReducers } from 'redux';
 import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 
+import { loadingReducer } from './modules/loading';
 import { userReducer } from './modules/user';
 
 const rootReducer = combineReducers({
+  isLoading: loadingReducer,
   user: userReducer,
 });
 
