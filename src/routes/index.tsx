@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
+import { Layout } from '../components/Layout';
 import { withFirebase } from '../firebase';
 import { FirebaseTypes } from '../firebase/firebase';
 import '../less/App.less';
@@ -12,7 +13,7 @@ import { Login } from '../pages/Login';
 import { NotFound } from '../pages/NotFound';
 import { Province } from '../pages/Province';
 import { Register } from '../pages/Register';
-import { Dispatch } from '../store';
+import { Dispatch, RootState } from '../store';
 import { setIsLoading } from '../store/modules/loading';
 import { setAuthenticated, setUser } from '../store/modules/user';
 
@@ -23,6 +24,7 @@ interface Props {
 }
 
 function Routes({ firebase }: Props) {
+  const user = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch<Dispatch>();
 
   useEffect(() => {
@@ -44,17 +46,20 @@ function Routes({ firebase }: Props) {
   }, [dispatch, firebase]);
 
   return (
-    <Switch>
-      <Route exact path='/' component={Home} />
-      <Route exact path='/provincia/:provinceName' component={Province} />
-      <Route exact path='/provincia/:palabra' component={Datos} />
+    <Layout>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/provincia/:palabra' component={Datos} />
+        <Route exact path='/provincia/:provinceName' component={Province} />
 
-      <NotLoggedRoute exact path='/admin/r' component={Register} />
-      <NotLoggedRoute exact path='/admin/login' component={Login} />
-      <LoggedRoute exact path='/admin/home' component={AdminHome} />
+        <Route exact path='/admin' render={() => (user.isAuthenticated ? <AdminHome /> : <Login />)} />
+        <NotLoggedRoute exact path='/admin/r' Component={Register} />
+        <NotLoggedRoute exact path='/admin/login' Component={Login} />
+        <LoggedRoute exact path='/admin/home' Component={AdminHome} />
 
-      <Route component={NotFound} />
-    </Switch>
+        <Route component={NotFound} />
+      </Switch>
+    </Layout>
   );
 }
 

@@ -14,6 +14,7 @@ const { Header, Content, Footer } = Layout;
 interface Props {
   firebase: FirebaseTypes;
 }
+
 // tslint:disable-next-line: variable-name
 const AdminHome = ({ firebase }: Props) => {
   const dispatch = useDispatch<Dispatch>();
@@ -30,7 +31,7 @@ const AdminHome = ({ firebase }: Props) => {
   };
 
   return (
-    <Layout>
+    <Layout className='Admin'>
       <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
         <div className='logo' />
         <Menu theme='dark' mode='horizontal' defaultSelectedKeys={['2']}>

@@ -1,5 +1,8 @@
 import React, { ReactNode } from 'react';
 
+import '../less/Admin/Admin.less';
+import '../less/App.less';
+
 import { Loading } from './Loading';
 
 interface Props {
