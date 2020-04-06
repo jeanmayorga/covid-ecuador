@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { notification } from 'antd';
 
 interface Entrada {
   titulo: string;
 }
 
 const Cabezera = (props: Entrada) => {
+
   useEffect(() => {
     var notification = null;
 

@@ -1,6 +1,6 @@
-import { Row, Col, Tag } from 'antd';
-import { Line } from 'react-chartjs-2';
+import { Col, Row, Tag } from 'antd';
 import React from 'react';
+import { Line } from 'react-chartjs-2';
 import Busqueda from '../components/busqueda_p_c';
 import Footer from '../components/footer';
 import Head from '../components/head';
@@ -48,6 +48,7 @@ const datos = {
   ],
 };
 
+// tslint:disable-next-line: variable-name
 export const Home = () => {
   return (
     <>

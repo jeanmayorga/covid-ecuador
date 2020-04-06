@@ -1,0 +1,35 @@
+.Loading{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s;
+  background: transparent;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  &.active{
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    background: rgba(255,255,255,1);
+    transition: all .3s;
+  }
+  &.out{
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+  }
+  .LoadingLayout{
+    text-align: center;
+      img{
+        width: 150px;
+        margin-bottom: 1em;
+        display: block;
+    }
+  }
+}
