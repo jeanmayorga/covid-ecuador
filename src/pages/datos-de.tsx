@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Busqueda from '../components/busqueda_p_c';
-import { format, addDays } from 'date-fns';
+import { format } from 'date-fns';
 import { Line } from 'react-chartjs-2';
 import { useParams } from 'react-router-dom';
 import { Row, Col } from 'antd';
@@ -22,12 +22,13 @@ const datos = {
   ],
 };
 
+
 const Datos = () => {
   useEffect(() => {
     console.log('ok');
   });
 
-  let { palabra } = useParams();
+  const { palabra } = useParams();
 
   return (
     <>
@@ -42,6 +43,7 @@ const Datos = () => {
           <Line data={datos} width={2000} height={300} options={{ maintainAspectRatio: false }} />
         </Col>
       </Row>
+
 
       <div className='busqueda'>
         <Row justify='center'>
