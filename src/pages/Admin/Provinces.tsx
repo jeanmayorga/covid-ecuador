@@ -58,12 +58,20 @@ const AdminProvinces = ({ firebase }: Props) => {
     <Layout className='Admin'>
       <Sider trigger={null} collapsible collapsed={isCollapsed}>
         <div className='logo' />
-        <Menu theme='dark' mode='inline' defaultSelectedKeys={['1']} style={{ marginTop: '60px' }}>
-          <Menu.Item key='1'>
-            <UserOutlined />
-            <span>Provinces</span>
+        <Menu theme='dark' mode='inline' defaultSelectedKeys={['0']} style={{ marginTop: '60px' }}>
+          <Menu.Item key='0'>
+            <Link to={'/admin/provinces'}>
+              <UserOutlined />
+              <span>Provinces</span>
+            </Link>
           </Menu.Item>
-          <Menu.Item key='4' onClick={logout}>
+          <Menu.Item key='1'>
+            <Link to={'/admin/cases'}>
+              <UserOutlined />
+              <span>Cases</span>
+            </Link>
+          </Menu.Item>
+          <Menu.Item key='2' onClick={logout}>
             <UploadOutlined />
             <span>Sign Out</span>
           </Menu.Item>

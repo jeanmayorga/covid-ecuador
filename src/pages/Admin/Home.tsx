@@ -2,7 +2,7 @@ import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/i
 import { Layout, Menu } from 'antd';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import { withFirebase } from '../../firebase';
 import { FirebaseTypes } from '../../firebase/firebase';
@@ -41,11 +41,19 @@ const AdminHome = ({ firebase }: Props) => {
       <Sider trigger={null} collapsible collapsed={isCollapsed}>
         <div className='logo' />
         <Menu theme='dark' mode='inline' defaultSelectedKeys={['1']} style={{ marginTop: '60px' }}>
-          <Menu.Item key='1'>
-            <UserOutlined />
-            <span>Cases</span>
+          <Menu.Item key='0'>
+            <Link to={'/admin/provinces'}>
+              <UserOutlined />
+              <span>Provinces</span>
+            </Link>
           </Menu.Item>
-          <Menu.Item key='4' onClick={logout}>
+          <Menu.Item key='1'>
+            <Link to={'/admin/cases'}>
+              <UserOutlined />
+              <span>Cases</span>
+            </Link>
+          </Menu.Item>
+          <Menu.Item key='2' onClick={logout}>
             <UploadOutlined />
             <span>Sign Out</span>
           </Menu.Item>
