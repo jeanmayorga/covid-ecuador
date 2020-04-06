@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-
 import { Layout } from '../components/Layout';
 import { withFirebase } from '../firebase';
 import { FirebaseTypes } from '../firebase/firebase';

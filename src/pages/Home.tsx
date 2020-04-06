@@ -1,7 +1,6 @@
 import { Col, Row, Tag } from 'antd';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
-
 import Busqueda from '../components/busqueda_p_c';
 import Footer from '../components/footer';
 import Head from '../components/head';
