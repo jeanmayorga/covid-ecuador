@@ -45,16 +45,10 @@ const AdminProvinces = ({ firebase }: Props) => {
     form.resetFields();
   };
 
-  // useEffect(() => {
-  //   getProvinces({ firebase }).then(a => {
-  //     console.log(a);
-  //   });
-  // }, [firebase]);
-
   useEffect(() => {
     getProvincesLive({ firebase }).on('value', (snapshot: any) => {
       const inObject = snapshot.val();
-      const inArray: any[] = Object.values(inObject);
+      const inArray: any[] = inObject ? Object.values(inObject) : [];
       setProvinces(inArray);
       setIsFetching(false);
     });
@@ -88,23 +82,29 @@ const AdminProvinces = ({ firebase }: Props) => {
               <Skeleton title={false} />
             </>
           ) : (
-            <List
-              itemLayout='horizontal'
-              dataSource={provinces}
-              renderItem={item => (
-                <List.Item
-                  actions={[
-                    <Button shape='round' onClick={() => removeProvince({ firebase, provinceSlug: item.slug })}>
-                      Delete
-                    </Button>,
-                  ]}>
-                  <List.Item.Meta
-                    title={<Link to={`/admin/province/${item.slug}`}>{item.Name}</Link>}
-                    description={item.slug}
-                  />
-                </List.Item>
+            <>
+              {provinces.length === 0 ? (
+                <h3>No provinces</h3>
+              ) : (
+                <List
+                  itemLayout='horizontal'
+                  dataSource={provinces}
+                  renderItem={item => (
+                    <List.Item
+                      actions={[
+                        <Button shape='round' onClick={() => removeProvince({ firebase, provinceSlug: item.slug })}>
+                          Delete
+                        </Button>,
+                      ]}>
+                      <List.Item.Meta
+                        title={<Link to={`/admin/province/${item.slug}`}>{item.Name}</Link>}
+                        description={item.slug}
+                      />
+                    </List.Item>
+                  )}
+                />
               )}
-            />
+            </>
           )}
           <Form onFinish={provinceFormSubmit} form={form}>
             <Row gutter={20}>

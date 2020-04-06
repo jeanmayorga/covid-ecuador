@@ -13,6 +13,7 @@ export interface Cases {
 export interface Province {
   Name: string;
   slug: string;
+  cover?: string;
 }
 
 // Marbe

@@ -8,7 +8,13 @@ export const getProvincesLive = (options: { firebase: FirebaseTypes }) => {
 
 export const getProvinces = async (options: { firebase: FirebaseTypes }) => {
   const request = await options.firebase.database.ref('/provinces').once('value');
-  return Object.values(request.val()) as Province[];
+  const data = request.val();
+  return (data ? Object.values(data) : []) as Province[];
+};
+
+export const getProvince = async (options: { provinceSlug: string; firebase: FirebaseTypes }) => {
+  const request = await options.firebase.database.ref(`provinces/${options.provinceSlug}`).once('value');
+  return request.val() as Province;
 };
 
 export const setProvince = async (options: { province: Province; firebase: FirebaseTypes }) => {

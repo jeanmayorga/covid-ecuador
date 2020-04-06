@@ -22,4 +22,27 @@
     color: #fff;
     font-size: 20px;
   }
+  .ant-upload-drag {
+    width: 100%;
+    min-height: 200px !important;
+    max-height: 300px !important;
+    overflow: hidden;
+    position: relative;
+    .uploadingImageIn{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .ant-upload-btn{
+      min-height: 200px !important;
+      padding: 0 !important;
+      img{
+        width: 100%;
+      }
+    }
+  }
+  .ant-upload-list-item {
+    display: none;
+  }
 }

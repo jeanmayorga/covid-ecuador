@@ -1,6 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import 'firebase/storage';
 
 const config = {
   apiKey: 'AIzaSyBFEpgsY-8DS3_1UtoWL4v1b5GqPj7oCdA',
@@ -15,15 +16,18 @@ const config = {
 
 export interface FirebaseTypes {
   auth: app.auth.Auth;
+  storage: app.storage.Storage;
   database: app.database.Database;
 }
 
 class Firebase {
   auth: FirebaseTypes['auth'];
+  storage: FirebaseTypes['storage'];
   database: FirebaseTypes['database'];
   constructor() {
     app.initializeApp(config);
     this.auth = app.auth();
+    this.storage = app.storage();
     this.database = app.database();
   }
 }
