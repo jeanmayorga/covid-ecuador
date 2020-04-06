@@ -7,6 +7,7 @@ import { withFirebase } from '../firebase';
 import { FirebaseTypes } from '../firebase/firebase';
 import '../less/App.less';
 import { AdminHome } from '../pages/Admin/Home';
+import { AdminProvinces } from '../pages/Admin/Provinces';
 import Datos from '../pages/datos-de';
 import { Home } from '../pages/Home';
 import { Login } from '../pages/Login';
@@ -56,6 +57,7 @@ function Routes({ firebase }: Props) {
         <NotLoggedRoute exact path='/admin/r' Component={Register} />
         <NotLoggedRoute exact path='/admin/login' Component={Login} />
         <LoggedRoute exact path='/admin/home' Component={AdminHome} />
+        <LoggedRoute exact path='/admin/provinces' Component={AdminProvinces} />
 
         <Route component={NotFound} />
       </Switch>

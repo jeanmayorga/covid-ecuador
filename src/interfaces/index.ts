@@ -11,10 +11,8 @@ export interface Cases {
 }
 
 export interface Province {
-  name: string;
-  confirmed: number;
-  deaths: number;
-  recovered: number;
+  Name: string;
+  slug: string;
 }
 
 // Marbe
