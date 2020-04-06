@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { Firebase, FirebaseContext } from './firebase';
 import { Routes } from './routes';
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <FirebaseContext.Provider value={new Firebase()}>
@@ -13,3 +14,5 @@ ReactDOM.render(
   </FirebaseContext.Provider>,
   document.getElementById('root'),
 );
+
+serviceWorker.unregister();

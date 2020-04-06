@@ -1,7 +1,6 @@
 import { Row, Col, Tag } from 'antd';
 import { Line } from 'react-chartjs-2';
 import React from 'react';
-
 import Busqueda from '../components/busqueda_p_c';
 import Footer from '../components/footer';
 import Head from '../components/head';
@@ -34,7 +33,6 @@ const data = [
   },
 ];
 
-
 const datos = {
   labels: ['Lunes 12', 'Martes 13', 'Miercoles 14', 'Jueves 15', 'Viernes 16', 'Sabado 17', 'Domingo 18'],
   datasets: [
@@ -45,9 +43,9 @@ const datos = {
       borderWidth: 1,
       hoverBackgroundColor: 'rgba(255,99,132,0.4)',
       hoverBorderColor: 'rgba(255,99,132,1)',
-      data: [65, 59, 80, 81, 56, 55, 40]
-    }
-  ]
+      data: [65, 59, 80, 81, 56, 55, 40],
+    },
+  ],
 };
 
 export const Home = () => {
@@ -58,8 +56,8 @@ export const Home = () => {
         <Row justify='center'>
           <Col xs={24} md={14}>
             <h1>
-              ECUADOR &nbsp; <img src='https://image.flaticon.com/icons/svg/330/330581.svg' alt='' /> &nbsp; lucha contra el
-              Covid-19
+              ECUADOR &nbsp; <img src='https://image.flaticon.com/icons/svg/330/330581.svg' alt='' /> &nbsp; lucha
+              contra el Covid-19
             </h1>
 
             <p>
@@ -150,14 +148,11 @@ export const Home = () => {
         </div>
       </div>
 
-    <Row justify='center'>
-      <Col>
-
+      <Row justify='center'>
+        <Col>
           <Line data={datos} width={2000} height={300} options={{ maintainAspectRatio: false }} />
-
-      </Col>
-    </Row>
-
+        </Col>
+      </Row>
 
       <div className='busqueda'>
         <Row justify='center'>
