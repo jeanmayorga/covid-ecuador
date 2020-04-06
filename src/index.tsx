@@ -9,7 +9,6 @@ import * as serviceWorker from './serviceWorker';
 
 import { store } from './store';
 
-
 ReactDOM.render(
   <Provider store={store}>
     <FirebaseContext.Provider value={new Firebase()}>

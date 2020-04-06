@@ -6,7 +6,6 @@ interface Entrada {
 }
 
 const Cabezera = (props: Entrada) => {
-
   useEffect(() => {
     var notification = null;
 

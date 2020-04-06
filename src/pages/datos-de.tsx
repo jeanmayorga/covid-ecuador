@@ -8,7 +8,15 @@ import Footer from '../components/footer';
 import '../less/datos.less';
 
 const datos = {
-  labels: [format(new Date(2020, 1,11),'d MMMM YYY' ), 'Martes 13', 'Miercoles 14', 'Jueves 15', 'Viernes 16', 'Sabado 17', 'Domingo 18'],
+  labels: [
+    format(new Date(2020, 1, 11), 'd MMMM YYY'),
+    'Martes 13',
+    'Miercoles 14',
+    'Jueves 15',
+    'Viernes 16',
+    'Sabado 17',
+    'Domingo 18',
+  ],
   datasets: [
     {
       label: 'Infectados en Marzo',
@@ -21,7 +29,6 @@ const datos = {
     },
   ],
 };
-
 
 const Datos = () => {
   useEffect(() => {
@@ -43,7 +50,6 @@ const Datos = () => {
           <Line data={datos} width={2000} height={300} options={{ maintainAspectRatio: false }} />
         </Col>
       </Row>
-
 
       <div className='busqueda'>
         <Row justify='center'>
