@@ -1,10 +1,10 @@
 import { CheckCircleOutlined, DingtalkOutlined, TeamOutlined } from '@ant-design/icons';
-import { Col, Row } from 'antd';
+import { Col, Row, Tag } from 'antd';
 import React from 'react';
 // import { Line } from 'react-chartjs-2';
 
 // import Busqueda from '../components/busqueda_p_c';
-// import Footer from '../components/footer';
+import Footer from '../components/footer';
 import { Map } from '../components/Map';
 // import ProgresoLine from '../components/progreso_barra';
 // import ProgresoCircle from '../components/progreso_circle';
@@ -78,21 +78,21 @@ export const Home = () => {
           </div>
           <div className='flexCenter'>
             <Row gutter={10} className='bubbles'>
-              <Col span={8} className='confirmedColor'>
+              <Col xs={24} md={8} className='confirmedColor'>
                 <div className='bubble'>
                   <TeamOutlined />
                   9,468
                 </div>
                 <div className='subtitle'>CASOS CONFIRMADOS</div>
               </Col>
-              <Col span={8} className='healthedColor'>
+              <Col xs={24} md={8} className='healthedColor'>
                 <div className='bubble'>
                   <CheckCircleOutlined />
                   1,061
                 </div>
                 <div className='subtitle'>CASOS CON ALTA HOSPITALARIA</div>
               </Col>
-              <Col span={8} className='deadColor'>
+              <Col xs={24} md={8} className='deadColor'>
                 <div className='bubble'>
                   <DingtalkOutlined />
                   474
@@ -103,43 +103,30 @@ export const Home = () => {
           </div>
         </div>
       </section>
+
       <section className='map'>
         <div>
           <div className='title'>Cases in Ecuador</div>
+          <section className='pildoras'>
+            <Row justify='center'>
+              <Col xs={20} md={12} className='etiquetas'>
+                <Tag color='processing'>
+                  <b>Poco Riesgos</b>
+                </Tag>
+                <Tag color='warning'>
+                  <b>En Aumento de Riesgos</b>
+                </Tag>
+                <Tag color='error'>
+                  <b>Mucho Riesgos</b>
+                </Tag>
+              </Col>
+            </Row>
+          </section>
           <Map />
         </div>
       </section>
-      {/* <section>
-        <Row justify='center'>
-          <Col xs={24} md={14}>
-            <h1>
-              ECUADOR &nbsp; <img src='https://image.flaticon.com/icons/svg/330/330581.svg' alt='' /> &nbsp; lucha
-              contra el Covid-19
-            </h1>
 
-            <p>
-              El MSP dispone al momento de 27 hospitales para atención especifica de casos de coronavirus, 2.100 centros
-              médicos, además 133 hospitales habilitados para atender a la ciudadanía para otro tipo de consultas.
-            </p>
-            <p>
-              El 29 de febrero de 2020 se confirmó el primer caso de coronavirus. El 13/03/2020 se activó el COE
-              Nacional para la coordinación de la emergencia.
-            </p>
-            <p>
-              Mediante Acuerdo Ministerial No 00126-2020 emitido el 11 de marzo de 2020 por la Ministra de Salud, se
-              declara el Estado de Emergencia Sanitaria en el Sistema Nacional de Salud.
-            </p>
-          </Col>
-
-          <Col xs={24} md={12} className='etiquetas'>
-            <Tag color='processing'>Sin Riesgos</Tag>
-            <Tag color='warning'>En Aumento de Riesgos</Tag>
-            <Tag color='error'>Mucho Riesgos</Tag>
-          </Col>
-        </Row>
-      </section>
-
-      <div className='estatico'>
+      {/*<div className='estatico'>
         <Row justify='center'>
           <Col xs={7} md={3}>
             <Statico label='Sierra' valor={10} />
@@ -222,9 +209,9 @@ export const Home = () => {
             <Busqueda />
           </Col>
         </Row>
-      </div>
+    </div>*/}
 
-      <Footer /> */}
+      <Footer />
     </>
   );
 };
