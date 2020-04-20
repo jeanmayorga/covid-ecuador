@@ -1,12 +1,12 @@
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import { UploadOutlined, UserOutlined } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Link, useHistory } from 'react-router-dom';
 
 import { withFirebase } from '../../firebase';
 import { FirebaseTypes } from '../../firebase/firebase';
-import { Dispatch, RootState } from '../../store';
+import { Dispatch } from '../../store';
 import { setIsLoading } from '../../store/modules/loading';
 import { removeUser, setAuthenticated } from '../../store/modules/user';
 
@@ -19,11 +19,7 @@ interface Props {
 // tslint:disable-next-line: variable-name
 const AdminHome = ({ firebase }: Props) => {
   const dispatch = useDispatch<Dispatch>();
-  const user = useSelector((state: RootState) => state.user);
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [confirmed, setConfirmed] = useState<number>(0);
-  const [deaths, setdeaths] = useState<number>(0);
-  const [recovered, setRecovered] = useState<number>(0);
 
   const history = useHistory<typeof useHistory>();
 

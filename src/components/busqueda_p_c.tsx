@@ -41,11 +41,9 @@ const Buscar = () => {
       <div className='etiquetas_detalles_p_c'>
         {item.map(valor => (
           <Link to={`/provincia/${valor.label}`}>
-            <a>
               <Tag id='tag' color='default'>
                 {valor.label}
               </Tag>
-            </a>
           </Link>
         ))}
       </div>

@@ -1,4 +1,10 @@
-import { ArrowRightOutlined, LoadingOutlined, UploadOutlined, UserOutlined } from '@ant-design/icons';
+import {
+  ArrowRightOutlined,
+  LoadingOutlined,
+  UploadOutlined,
+  UserOutlined,
+  ArrowLeftOutlined,
+} from '@ant-design/icons';
 import { Button, Col, Form, Input, Layout, Menu, Progress, Row, Skeleton, Spin, Upload } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -114,7 +120,10 @@ const AdminProvince = ({ firebase }: Props) => {
         </Menu>
       </Sider>
       <Layout className='site-layout'>
-        <Header className='titleBoard'>Provinces</Header>
+        <Header className='titleBoard'>
+          <ArrowLeftOutlined />
+          {province?.Name}
+        </Header>
         <Content
           style={{
             margin: '24px 16px',

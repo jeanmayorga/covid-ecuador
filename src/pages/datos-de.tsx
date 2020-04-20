@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import Busqueda from '../components/busqueda_p_c';
+import { Col, Row } from 'antd';
 import { format } from 'date-fns';
+import React, { useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import { useParams } from 'react-router-dom';
-import { Row, Col } from 'antd';
+
+import Busqueda from '../components/busqueda_p_c';
 import Footer from '../components/footer';
 import '../less/datos.less';
 

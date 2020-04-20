@@ -1,8 +1,9 @@
+import { Col, Row } from 'antd';
 import React from 'react';
-import { Row, Col, Descriptions } from 'antd';
+
 import '../less/footer.less';
 
-const Footer = () => {
+function Footer() {
   return (
     <>
       <Row justify='center' className='footer'>
@@ -43,6 +44,6 @@ const Footer = () => {
       </Row>
     </>
   );
-};
+}
 
 export default Footer;
